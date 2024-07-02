@@ -1,0 +1,155 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  max-width: 960px;
+  margin: auto;
+  background-color: #f0f4f8;
+  color: #333;
+  padding: 1em;
+}
+
+h1 {
+  word-spacing: 6em;
+  font-size: 3em;
+  letter-spacing: 0.3em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  text-transform: uppercase;
+  color: #0073e6;
+  animation: fadeIn 1s ease-in-out;
+  margin-top: 0;
+}
+
+h1 {
+  margin-right: 110px;
+}
+
+.last-name {
+  margin-left: 190px;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: #0073e6;
+  border-bottom: 2px solid #0073e6;
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
+  animation: fadeIn 1s ease-in-out;
+}
+
+h3 {
+  font-size: 1.2em;
+  color: #555;
+  padding-bottom: 0.5em;
+  animation: fadeIn 1s ease-in-out;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-top: 2em;
+  gap: 2em;
+  animation: fadeIn 1s ease-in-out;
+}
+
+header {
+  text-align: center;
+  margin: 2em auto;
+  position: relative;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.name-container {
+  position: relative;
+  margin-top: 150px;
+}
+
+.name-container h1 {
+  position: relative;
+  z-index: 2;
+}
+
+section {
+  margin: 1em;
+  padding: 1.5em;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  animation: slideIn 1s ease-in-out;
+}
+
+section:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  text-align: center;
+  margin-top: 2em;
+  padding: 1em;
+  background-color: #0073e6;
+  color: #fff;
+  border-radius: 12px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #0073e6;
+  margin: 1em 0;
+  animation: fadeIn 1s ease-in-out;
+}
+
+#header {
+  text-align: center;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid #0073e6;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.progress {
+  background-color: #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 0.5em 0;
+}
+
+.progress-bar {
+  background-color: #0073e6;
+  height: 1em;
+  border-radius: 12px;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  padding: 0 0.5em;
+}

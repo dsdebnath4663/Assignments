@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <title>Your Name Resume</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 14px;
+        max-width: 960px;
+        margin: auto;
+        background-color: #f0f4f8;
+        color: #333;
+        padding: 1em;
+      }
+
+      h1 {
+        word-spacing: 6em;
+        font-size: 3em;
+        letter-spacing: 0.3em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        text-transform: uppercase;
+        color: #0073e6;
+        animation: fadeIn 1s ease-in-out;
+        margin-top: 0;
+        /* Added to remove margin */
+      }
+
+      h1 {
+        margin-right: 110px;
+        /* Adjust right margin as needed */
+      }
+
+      .last-name {
+        margin-left: 190px;
+        /* Adjust left margin as needed */
+      }
+
+      h2 {
+        font-size: 1.5em;
+        color: #0073e6;
+        border-bottom: 2px solid #0073e6;
+        padding-bottom: 0.5em;
+        margin-bottom: 0.5em;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      h3 {
+        font-size: 1.2em;
+        color: #555;
+        padding-bottom: 0.5em;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        margin-top: 2em;
+        gap: 2em;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      header {
+        text-align: center;
+        margin: 2em auto;
+        position: relative;
+      }
+
+      .profile-photo {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+        /* Ensure photo is above text */
+      }
+
+      .name-container {
+        position: relative;
+        /* Added for stacking context */
+        margin-top: 150px;
+        /* Adjusted to match photo height */
+      }
+
+      .name-container h1 {
+        position: relative;
+        z-index: 2;
+        /* Ensure name is above photo */
+      }
+
+      section {
+        margin: 1em;
+        padding: 1.5em;
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        animation: slideIn 1s ease-in-out;
+      }
+
+      section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      i {
+        margin-right: 0.5em;
+        color: #0073e6;
+      }
+
+      p {
+        margin: 0.5em 0;
+        color: #555;
+      }
+
+      hr {
+        border: none;
+        background-color: lightgray;
+        height: 1px;
+        margin: 1em 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #0073e6;
+        transition: color 0.3s ease-in-out;
+      }
+
+      a:hover {
+        color: #005bb5;
+      }
+
+      ul {
+        list-style-type: none;
+        /*padding: 0;*/
+      }
+
+      ul li {
+        display: flex;
+        align-items: center;
+        padding: 0.5em 0;
+        position: relative;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      ul li:before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        background-color: #0073e6;
+        border-radius: 50%;
+        position: absolute;
+        left: -20px;
+      }
+
+      .progress {
+        background-color: #e0e0e0;
+        border-radius: 13px;
+        padding: 3px;
+        width: 100%;
+        margin-left: 20px;
+      }
+
+      .progress-bar {
+        background-color: #0073e6;
+        width: 0%;
+        height: 20px;
+        border-radius: 10px;
+        text-align: center;
+        color: white;
+        line-height: 20px;
+        transition: width 1s ease-in-out;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.75em 1.5em;
+        border-radius: 25px;
+        background-color: #0073e6;
+        color: #fff;
+        text-decoration: none;
+        transition: background-color 0.3s ease-in-out,
+          transform 0.3s ease-in-out;
+      }
+
+      .btn:hover {
+        background-color: #005bb5;
+        transform: translateY(-2px);
+      }
+
+      .btn:active {
+        transform: translateY(1px);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateY(20px);
+        }
+
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        main {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      section {
+        margin: 1em;
+        padding: 1.5em;
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+
+      section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .education-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .education-item {
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #f5f5f5;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+
+      .education-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .education-item h3 {
+        font-size: 1.2em;
+        color: #0073e6;
+        margin-bottom: 0.5em;
+      }
+
+      .education-item p {
+        color: #555;
+        margin-bottom: 0.5em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header id="header">
+      <img
+        src="https://media.licdn.com/dms/image/C5603AQGZ9WekZLq_XQ/profile-displayphoto-shrink_400_400/0/1631376023202?e=1725494400&v=beta&t=1Usr32Vq_H4chPVCzcxs76nCwBxPMlpiTklpQEaj7Q4"
+        alt="Your Photo"
+        class="profile-photo"
+      />
+      <div class="name-container">
+        <h1>DEBNATH<span class="last-name">SAHA</span></h1>
+
+        <hr />
+        💻 Front-End Dev | 🚀 Seeking React ⚛️, Redux 🔁, HTML 🌐, CSS 🎨, Java
+        ☕️ Internship | 🎨 Tech Enthusiast | 💡 Ready to Innovate! | 🌟 Fast
+        Learner | 🛠 Problem Solver | Let's Build Something Awesome!
+
+        <hr />
+      </div>
+    </header>
+    <main>
+      <article id="mainLeft">
+        <section>
+          <h2>CONTACT</h2>
+          <p>
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:dsdebnath4663@gmail.com">dsdebnath4663@gmail.com </a>
+          </p>
+          <p>
+            <i class="fab fa-github" aria-hidden="true"></i>
+            <a href="https://github.com/dsdebnath4663?tab=repositories">dsdebnath4663?tab=repositories</a>
+          </p>
+          <p>
+            <i class="fab fa-linkedin" aria-hidden="true"></i>
+            <a href="https://www.linkedin.com/in/debnath-saha-190b44199/"
+              >debnath-saha-190b44199</a
+            >
+          </p>
+        </section>
+        <section>
+          <h2>SKILLS</h2>
+          <ul>
+            <li>
+              <span>HTML</span>
+              <div class="progress">
+                <div class="progress-bar" style="width: 90%">90%</div>
+              </div>
+            </li>
+            <li>
+              <span>CSS</span>
+              <div class="progress">
+                <div class="progress-bar" style="width: 85%">85%</div>
+              </div>
+            </li>
+            <li>
+              <span>JavaScript</span>
+              <div class="progress">
+                <div class="progress-bar" style="width: 80%">80%</div>
+              </div>
+            </li>
+            <li>
+              <span>React</span>
+              <div class="progress">
+                <div class="progress-bar" style="width: 75%">75%</div>
+              </div>
+            </li>
+            <li>
+              <span>Git</span>
+              <div class="progress">
+                <div class="progress-bar" style="width: 70%">70%</div>
+              </div>
+            </li>
+            <li>
+              <span>Java</span>
+              <div class="progress">
+                <div class="progress-bar" style="width: 75%">75%</div>
+              </div>
+            </li>
+            <li>
+              <span>Spring</span>
+              <div class="progress">
+                <div class="progress-bar" style="width: 75%">75%</div>
+              </div>
+            </li>
+            <li>
+              <span>Hibernate</span>
+              <div class="progress">
+                <div class="progress-bar" style="width: 75%">75%</div>
+              </div>
+            </li>
+            <li>
+              <span>Oracle</span>
+              <div class="progress">
+                <div class="progress-bar" style="width: 75%">75%</div>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <!-- <section>
+          <h2>EDUCATION</h2>
+          <ul>
+            <li>
+              <h3>YOUR MAJOR</h3>
+              <p>Your university or school</p>
+              <p>2018-2022</p>
+            </li>
+            <li>
+              <h3>YOUR SECOND MAJOR</h3>
+              <p>Your second university or school</p>
+              <p>2015-2018</p>
+            </li>
+          </ul>
+        </section> -->
+      </article>
+      <article id="mainRight">
+        <section>
+          <h2>EDUCATION</h2>
+          <div class="education-container">
+            <div class="education-item">
+              <h3>
+                Bachelor of Technology (B.Tech), Computer Science & Engineering
+              </h3>
+              <p>
+                Maulana Abul Kalam Azad University Of Technology, West Bengal
+              </p>
+              <p>2021 - 2023</p>
+            </div>
+            <div class="education-item">
+              <h3>Diploma, Computer Science & Engineering
+              </h3>
+              <p>All India Council For Technical Education (AICTE)
+              </p>
+              <p>2019 - 2021
+              </p>
+            </div>
+            <div class="education-item">
+              <h3>Secondary (X)
+              </h3>
+              <p>WEST BENGAL BOARD OF SECONDARY EDUCATION board
+              </p>
+              <p>2018-2019</p>
+            </div>
+          
+          </div>
+        </section>
+
+        <section>
+          <h2>PROJECTS</h2>
+          <h3>Learning Management System</h3>
+          <p>Implemented LMS features:</p>
+
+          <ul>
+            <li>
+              Login/Registration: Username/email, password fields, "Forgot
+              Password," "Register."
+            </li>
+            <li>
+              Dashboard: Enrolled courses, assignments, notifications, course
+              materials.
+            </li>
+            <li>
+              Course Catalog: Search, filters, course details, instructor info,
+              enrollment.
+            </li>
+            <li>
+              Course Page: Overview, modules, assignments, grades, forum,
+              announcements.
+            </li>
+            <li>Enrollment: Button, confirmation, access link for courses.</li>
+            <li>
+              Assignment Submission: Details, form, file upload, confirmation.
+            </li>
+            <li>
+              Grades: Assignment breakdown, course grade, instructor feedback.
+            </li>
+            <li>Discussion Forum: Threads, reply, upvote/downvote, sorting.</li>
+            <li>
+              Notifications: Center, real-time updates, preference management.
+            </li>
+            <li>
+              Profile Management: Edit profile, change password, history,
+              settings.
+            </li>
+            <li>
+              Admin Dashboard: Course/user management, analytics, settings.
+            </li>
+          </ul>
+
+          <p>
+            Tech stack: React.js, Redux.js, CSS, Bootstrap, Spring Boot, Oracle
+            DB, JDBC.
+          </p>
+          <p>https://github.com/dsdebnath4663/learning-management-system</p>
+          <p>https://github.com/dsdebnath4663/lms-service.</p>
+        </section>
+        <section>
+          <h2>LANGUAGES</h2>
+          <ul>
+            <li>
+              <span>English</span>
+              <div class="progress">
+                <div class="progress-bar" style="width: 95%">95%</div>
+              </div>
+            </li>
+            <li>
+              <span>Hindi</span>
+              <div class="progress">
+                <div class="progress-bar" style="width: 80%">80%</div>
+              </div>
+            </li>
+            <li>
+              <span>Bengali</span>
+              <div class="progress">
+                <div class="progress-bar" style="width: 100%">70%</div>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <p>© 2024 Your Name. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
